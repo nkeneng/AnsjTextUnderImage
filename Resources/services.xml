@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<container
+        xmlns="http://symfony.com/schema/dic/services"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service class="AnsjTextUnderImage\Subscriber\RouteSubscriber" id="ansj_text_under_image.subscriber.route_subscriber">
+            <argument>%ansj_text_under_image.plugin_name%</argument>
+            <argument>%ansj_text_under_image.plugin_dir%</argument>
+            <argument id="shopware.plugin.config_reader" type="service"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+    </services>
+</container>
